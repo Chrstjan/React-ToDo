@@ -5,18 +5,20 @@ import { ContainerBody } from "./components/Container/ContainerBody/ContainerBod
 import { ContainerHeader } from "./components/Container/ContainerHeader/ContainerHeader";
 import { Main } from "./components/Main/Main";
 import { useState} from "react";
+import { Task } from "./components/Task/Task";
 
 function App() {
   const [task, setTask] = useState({})
 
-  const handleCreateTask = () => {
-    setTask({
-      name: "Test",
-      amount: 1,
+  const handleCreateTask = (taskName, taskAmount) => {
+    const newTask = {
+      name: taskName,
+      amount: taskAmount,
       complete: false
-    });
+    }
+    setTask(newTask);
     console.log(task);
-    tasksArray.push(task);
+    tasksArray.push(newTask);
     console.log(tasksArray);
   }
   return (
@@ -25,7 +27,8 @@ function App() {
         <Container>
           <ContainerHeader />
           <ContainerBody>
-            <button onClick={handleCreateTask}>Add Task</button>
+            <button onClick={() => handleCreateTask("Funny haha", 1)}>Add Task</button>
+            <Task tasks={tasksArray}/>
           </ContainerBody>
         </Container>
       </Main>
