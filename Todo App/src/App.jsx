@@ -17,10 +17,10 @@ function App() {
     console.log(isOpen);
   };
 
-  const handleCreateTask = (taskName, taskAmount) => {
+  const handleCreateTask = (taskName) => {
     const newTask = {
       name: taskName,
-      amount: taskAmount,
+      amount: 1,
       complete: false,
     };
 
@@ -32,14 +32,11 @@ function App() {
         <Container>
           <ContainerHeader />
           <ContainerBody>
-            <button onClick={() => handleCreateTask("Watch Spiderman 1", 1)}>
-              Add Task
-            </button>
             <button onClick={handleModal}>
               {isOpen ? "Close Modal" : "Create New"}
             </button>
 
-            {isOpen ? <TaskModal /> : null}
+            {isOpen ? <TaskModal action={handleCreateTask} /> : null}
             <section className="tasksContainer">
               <Task tasks={task} setTasks={setTask} />
             </section>
