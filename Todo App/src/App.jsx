@@ -1,4 +1,3 @@
-import "./App.scss";
 import { tasksArray } from "./assets/App";
 import { Container } from "./components/Container/Container";
 import { ContainerBody } from "./components/Container/ContainerBody/ContainerBody";
@@ -6,6 +5,7 @@ import { ContainerHeader } from "./components/Container/ContainerHeader/Containe
 import { Main } from "./components/Main/Main";
 import { useState} from "react";
 import { Task } from "./components/Task/Task";
+import "./App.scss";
 
 function App() {
   const [task, setTask] = useState({})
@@ -16,6 +16,7 @@ function App() {
       amount: taskAmount,
       complete: false
     }
+    
     setTask(newTask);
     console.log(task);
     tasksArray.push(newTask);
@@ -27,8 +28,10 @@ function App() {
         <Container>
           <ContainerHeader />
           <ContainerBody>
-            <button onClick={() => handleCreateTask("Funny haha", 1)}>Add Task</button>
-            <Task tasks={tasksArray}/>
+            <button onClick={() => handleCreateTask("Watch Spiderman 3", 1)}>Add Task</button>
+            <section className="tasksContainer">
+              <Task tasks={tasksArray}/>
+            </section>
           </ContainerBody>
         </Container>
       </Main>

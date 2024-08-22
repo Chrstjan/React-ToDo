@@ -1,0 +1,21 @@
+.tasksStyling {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+
+    .buttonContainer {
+        border-left: 2px solid #000;
+        padding-left: 1rem;
+        button {
+            border: 0;
+            background: red;
+            color: #fff;
+
+            &:hover {
+                cursor: pointer;
+                scale: 1.1;
+            }
+        }
+    }
+}

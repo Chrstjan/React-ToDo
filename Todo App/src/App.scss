@@ -10,4 +10,9 @@ body {
   padding: 0;
   font-family: sans-serif;
   font-family: "Inter", sans-serif;
+
+  .tasksContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
