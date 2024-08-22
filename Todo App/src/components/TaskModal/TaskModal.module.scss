@@ -1,0 +1,19 @@
+@use "../../styles/variables" as v;
+
+.taskModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 15rem;
+  height: 12rem;
+  //   position: absolute;
+  //   top: 36%;
+
+  form {
+    @extend .taskModal;
+    border: 2px solid v.$main-dark-color;
+    background: v.$main-background-color;
+  }
+}
