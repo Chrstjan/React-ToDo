@@ -1,0 +1,10 @@
+@use "../../styles/variables" as v;
+
+.mainStyling {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    background: v.$main-background-color;
+    min-height: 100vh;
+}

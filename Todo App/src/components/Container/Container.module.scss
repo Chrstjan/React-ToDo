@@ -1,0 +1,8 @@
+@use "../../styles/variables" as v;
+
+.stickyNote {
+    display: block;
+    width: 25rem;
+    height: 60vh;
+    background: v.$note-background-color;
+}
