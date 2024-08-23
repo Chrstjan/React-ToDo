@@ -29,10 +29,8 @@ function App() {
     setTask([...task, newTask]);
   };
 
-  const handleDeleteTasks = () => {
-    console.log("lol");
+  const handleDeleteAllTasks = () => {
     setTask([]);
-    console.log(tasksArray);
   }
 
   return (
@@ -47,10 +45,8 @@ function App() {
             </section>
           </ContainerBody>
           <ContainerFooter>
-            <button className="" onClick={handleModal}>
-              {isOpen ? "Close Modal" : "Create New"}
-            </button>
-            <Button action={handleDeleteTasks} text='-'/>
+            <Button action={handleModal} symbol='+' text='Create New'/>
+            <Button action={handleDeleteAllTasks} symbol='-' text='Delete All'/>
           </ContainerFooter>
         </Container>
       </Main>

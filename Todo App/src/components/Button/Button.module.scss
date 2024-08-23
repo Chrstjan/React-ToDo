@@ -1,11 +1,19 @@
 @use "../../styles/variables" as v;
+@use "../../styles/placeholders";
 
-.buttonStyling {
-    border: 0;
-    background: transparent;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background: v.$main-dark-color;
-    font-size: 1rem;
+.btnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+
+    &:hover {
+        scale: 1.1;
+        cursor: pointer;
+    }
+
+    .buttonStyling {
+        @extend %taskBtn;
+    }
 }

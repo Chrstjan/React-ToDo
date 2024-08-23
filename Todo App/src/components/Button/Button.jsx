@@ -1,9 +1,12 @@
 import style from "./Button.module.scss"
 
-export const Button = ({action, text}) => {
+export const Button = ({action, symbol, text}) => {
     return (
         <>
-            <button onClick={action} className={style.buttonStyling}>{text}</button>
+            <span className={style.btnContainer}>
+                <button onClick={action} className={style.buttonStyling}>{symbol}</button>
+                <p>{text}</p>
+            </span>
         </>
     )
 }

@@ -1,13 +1,13 @@
 @use "../../../styles/variables" as v;
 
 .footerStyling {
-    position: absolute;
-    bottom: 2%;
-    left: 50%;
-    transform: translate(-50%);
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
     gap: 1rem;
+    margin-left: 2rem;
+    margin-bottom: 4rem;
     
     .buttonCreateStyling {
         border: 0;
