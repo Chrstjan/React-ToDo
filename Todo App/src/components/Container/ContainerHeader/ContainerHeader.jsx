@@ -1,11 +1,10 @@
 import style from "./ContainerHeader.module.scss"
 
-export const ContainerHeader = () => {
+export const ContainerHeader = ({text}) => {
     return (
         <>
             <header className={style.headerStyling}>
-                <h1>To Do</h1>
-                <button>&rarr;</button>
+                <h1>{text}</h1>
             </header>
         </>
     )

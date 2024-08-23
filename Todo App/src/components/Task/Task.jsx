@@ -1,8 +1,10 @@
-import { useState } from "react";
 import style from "./Task.module.scss";
+import { Button } from "../Button/Button";
+import { inProgressArray, tasksArray } from "../../assets/App";
 
-export const Task = ({ tasks, setTasks }) => {
+export const Task = ({ tasks, setTasks, action}) => {
   console.log(tasks);
+
 
   const handleDeleteTask = (taskName) => {
     //filter & !== loops and returns a new array and checks if one of the objects name and the value from taskName is the same.
@@ -21,7 +23,8 @@ export const Task = ({ tasks, setTasks }) => {
               <h3>{task.name}</h3>
             </header>
             <span className={style.buttonContainer}>
-              <button className={style.taskButton} onClick={() => handleDeleteTask(task.name)}>-</button>
+              <Button action={() => handleDeleteTask(task.name)} text='' symbol='-'/>
+              <Button action={() => handleTaskInProgress(task)} text='' symbol='>'/>
             </span>
           </span>
         );

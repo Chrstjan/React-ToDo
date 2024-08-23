@@ -1,4 +1,4 @@
-import { tasksArray } from "./assets/App";
+import { inProgressArray, tasksArray } from "./assets/App";
 import { Container } from "./components/Container/Container";
 import { ContainerBody } from "./components/Container/ContainerBody/ContainerBody";
 import { ContainerHeader } from "./components/Container/ContainerHeader/ContainerHeader";
@@ -13,6 +13,7 @@ import { Button } from "./components/Button/Button";
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [task, setTask] = useState(tasksArray);
+  const [inProgress, setInProgress] = useState(inProgressArray);
 
   const handleModal = () => {
     setIsOpen((prev) => !prev);
@@ -33,11 +34,16 @@ function App() {
     setTask([]);
   }
 
+  const handleMoveTask = (task) => {
+    console.log("lol");
+    console.log(task);
+  }
+
   return (
     <>
       <Main>
         <Container>
-          <ContainerHeader />
+          <ContainerHeader text='To Do'/>
           <ContainerBody>
             {isOpen ? <TaskModal action={handleCreateTask} /> : null}
             <section className="tasksContainer">
@@ -48,6 +54,23 @@ function App() {
             <Button action={handleModal} symbol='+' text='Create New'/>
             <Button action={handleDeleteAllTasks} symbol='-' text='Delete All'/>
           </ContainerFooter>
+        </Container>
+
+        <Container>
+          <ContainerHeader text='In Progress'/>
+          <ContainerBody>
+            <section className="tasksContainer">
+              <Task tasks={inProgress} setTasks={setInProgress} action={handleMoveTask}/>
+            </section>
+          </ContainerBody>
+        </Container>
+        <Container>
+          <ContainerHeader text='Done'/>
+          <ContainerBody>
+            <ContainerFooter>
+              <Button action={handleDeleteAllTasks} symbol='-' text='Delete All'/>
+            </ContainerFooter>
+          </ContainerBody>
         </Container>
       </Main>
     </>

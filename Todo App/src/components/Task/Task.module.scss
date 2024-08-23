@@ -9,6 +9,9 @@
     .buttonContainer {
         border-left: 2px solid #000;
         padding-left: 1rem;
+        display: flex;
+        flex-direction: row;
+
         button {
             @extend %taskBtn;
             width: 1.6rem;
