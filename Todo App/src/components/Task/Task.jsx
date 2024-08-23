@@ -21,7 +21,7 @@ export const Task = ({ tasks, setTasks }) => {
               <h3>{task.name}</h3>
             </header>
             <span className={style.buttonContainer}>
-              <button onClick={() => handleDeleteTask(task.name)}>
+              <button className={style.taskButton} onClick={() => handleDeleteTask(task.name)}>
                 Delete
               </button>
             </span>

@@ -7,6 +7,8 @@ import { useState } from "react";
 import { Task } from "./components/Task/Task";
 import "./App.scss";
 import { TaskModal } from "./components/TaskModal/TaskModal";
+import { ContainerFooter } from "./components/Container/ContainerFooter/ContainerFooter";
+import { Button } from "./components/Button/Button";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,21 +28,30 @@ function App() {
 
     setTask([...task, newTask]);
   };
+
+  const handleDeleteTasks = () => {
+    console.log("lol");
+    setTask([]);
+    console.log(tasksArray);
+  }
+
   return (
     <>
       <Main>
         <Container>
           <ContainerHeader />
           <ContainerBody>
-            <button onClick={handleModal}>
-              {isOpen ? "Close Modal" : "Create New"}
-            </button>
-
             {isOpen ? <TaskModal action={handleCreateTask} /> : null}
             <section className="tasksContainer">
               <Task tasks={task} setTasks={setTask} />
             </section>
           </ContainerBody>
+          <ContainerFooter>
+            <button className="" onClick={handleModal}>
+              {isOpen ? "Close Modal" : "Create New"}
+            </button>
+            <Button action={handleDeleteTasks} text='-'/>
+          </ContainerFooter>
         </Container>
       </Main>
     </>

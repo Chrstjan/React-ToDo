@@ -1,0 +1,11 @@
+@use "../../styles/variables" as v;
+
+.buttonStyling {
+    border: 0;
+    background: transparent;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: v.$main-dark-color;
+    font-size: 1rem;
+}
