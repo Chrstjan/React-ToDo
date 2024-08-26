@@ -6,9 +6,14 @@ export const TaskModal = ({ action, handleClose }) => {
   //Here i use it to get the value of the input field
   const inputRef = useRef("");
 
+  const handleInnerClick = (event) => {
+    event.stopPropagation();
+};
+
   return (
     <>
-      <div className={style.taskModal}>
+      <div onClick={handleClose} className={style.overlay}></div>
+      <div onClick={handleInnerClick} className={style.taskModal}>
         <h2>Create New Task</h2>
         <button onClick={handleClose} className={style.closeBtn}>X</button>
         <label htmlFor="taskName">Task Name:</label>

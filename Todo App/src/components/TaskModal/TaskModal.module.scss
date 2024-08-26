@@ -1,5 +1,16 @@
 @use "../../styles/variables" as v;
 
+.overlay {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  display: block;
+  background: #00000099;
+  filter: blur(3px);
+  width: 100%;
+  height: 100%;
+}
+
 .taskModal {
   display: flex;
   flex-direction: column;

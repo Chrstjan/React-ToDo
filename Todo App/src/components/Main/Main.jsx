@@ -1,9 +1,9 @@
 import style from "./Main.module.scss"
 
-export const Main = ({children, action}) => {
+export const Main = ({children}) => {
     return (
         <>
-            <main onClick={action} className={style.mainStyling}>
+            <main className={style.mainStyling}>
                 {children}
             </main>
         </>

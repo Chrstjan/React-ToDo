@@ -47,7 +47,7 @@ function App() {
 
   return (
     <>
-      <Main action={closeModal}>
+      <Main>
         <Container action={handleModal}>
           <ContainerHeader text='To Do'/>
           <ContainerBody action={handleModal}>
