@@ -20,6 +20,12 @@ function App() {
     console.log(isOpen);
   };
 
+  const closeModal = () => {
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  }
+
   const handleCreateTask = (taskName) => {
     const newTask = {
       name: taskName,
@@ -41,11 +47,11 @@ function App() {
 
   return (
     <>
-      <Main>
-        <Container>
+      <Main action={closeModal}>
+        <Container action={handleModal}>
           <ContainerHeader text='To Do'/>
-          <ContainerBody>
-            {isOpen ? <TaskModal action={handleCreateTask} /> : null}
+          <ContainerBody action={handleModal}>
+            {isOpen ? <TaskModal action={handleCreateTask} handleClose={handleModal} /> : null}
             <section className="tasksContainer">
               <Task tasks={task} setTasks={setTask} />
             </section>

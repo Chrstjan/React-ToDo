@@ -1,7 +1,6 @@
 @use "../../styles/variables" as v;
 
 .stickyNote {
-    position: relative;
     display: flex;
     flex-direction: column;
     gap: 1rem;
